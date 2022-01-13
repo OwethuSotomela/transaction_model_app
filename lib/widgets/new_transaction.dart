@@ -29,8 +29,10 @@ class NewTransaction extends StatelessWidget {
               // color: Colors.purple,
               child: Text('Add Transaction'), textColor: Colors.purple,
               onPressed: () {
-                print(titleController.text);
-                print(amountController.text);
+                addTx(
+                  titleController.text,
+                  double.parse(amountController.text),
+                );
               },
             ),
           ],
