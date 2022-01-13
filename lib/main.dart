@@ -32,6 +32,9 @@ class Homepage extends StatelessWidget {
     )
   ];
 
+  final titleControler = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +42,7 @@ class Homepage extends StatelessWidget {
         title: Text('Flutter Guide'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
@@ -48,6 +51,34 @@ class Homepage extends StatelessWidget {
               color: Colors.blue,
               child: Text('CHART!'),
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                // ignore: prefer_const_literals_to_create_immutables
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title'),
+                    controller: titleControler,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Amount'),
+                    controller: amountController,
+                  ),
+                  FlatButton(
+                    // color: Colors.purple,
+                    child: Text('Add Transaction'), textColor: Colors.purple,
+                    onPressed: () {
+                      print(titleControler.text);
+                      print(amountController.text);
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           Column(
