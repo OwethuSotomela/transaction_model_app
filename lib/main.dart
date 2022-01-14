@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_guide/widgets/transactional_list.dart';
+import './widgets/transactional_list.dart';
 import './widgets/new_transaction.dart';
 import './widgets/transactional_list.dart';
 import 'models/transaction.dart';
