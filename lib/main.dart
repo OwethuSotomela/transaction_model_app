@@ -60,7 +60,11 @@ class _HomepageState extends State<Homepage> {
     showModalBottomSheet(
       context: ctx,
       builder: (_) {
-        return NewTransaction(_addNewTransaction);
+        return GestureDetector(
+          onTap: (){},
+          child: NewTransaction(_addNewTransaction),
+          behavior: HitTestBehavior.opaque,
+        );
       },
     );
   }
@@ -73,7 +77,7 @@ class _HomepageState extends State<Homepage> {
         actions: [
           IconButton(
             icon: Icon(Icons.add),
-            onPressed: ()=> _startAddNewTransaction(context),
+            onPressed: () => _startAddNewTransaction(context),
           ),
         ],
       ),
@@ -97,7 +101,7 @@ class _HomepageState extends State<Homepage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: ()=> _startAddNewTransaction(context),
+        onPressed: () => _startAddNewTransaction(context),
       ),
     );
   }
