@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import './widgets/transactional_list.dart';
 import './widgets/new_transaction.dart';
-import './widgets/transactional_list.dart';
+// import './widgets/transactional_list.dart';
 import 'models/transaction.dart';
 
 void main() => runApp(MyApp());
@@ -15,8 +15,25 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
+          primarySwatch: Colors.pink,
+          accentColor: Colors.teal,
+          fontFamily: 'Quicksand',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                bodyText1: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+          appBarTheme: AppBarTheme(
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  subtitle1: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+          )),
       home: Homepage(),
     );
   }
@@ -32,18 +49,18 @@ class _HomepageState extends State<Homepage> {
   // final amountController = TextEditingController();
 
   final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 'T1',
-      title: 'New Shoes',
-      amount: 69.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 'T2',
-      title: 'Groceries',
-      amount: 15.99,
-      date: DateTime.now(),
-    )
+    // Transaction(
+    //   id: 'T1',
+    //   title: 'New Shoes',
+    //   amount: 69.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 'T2',
+    //   title: 'Groceries',
+    //   amount: 15.99,
+    //   date: DateTime.now(),
+    // )
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
@@ -77,7 +94,9 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.red,
-        title: Text('Personal Expenses'),
+        title: Text(
+          'Personal Expenses',
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.add),
