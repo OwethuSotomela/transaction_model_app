@@ -50,6 +50,7 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: EdgeInsets.all(20),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: groupedTransactioValues.map((data) {
         return ChartBar(
           (data['day'] as String),
