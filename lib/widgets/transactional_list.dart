@@ -10,7 +10,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 300,
       child: transactions.isEmpty
           ? Column(
               children: [
@@ -35,7 +35,19 @@ class TransactionList extends StatelessWidget {
                 return ListTile(
                   leading: CircleAvatar(
                     radius: 30,
-                    child: Text('\$${transactions[index].amount}'),
+                    child: Padding(
+                      padding: EdgeInsets.all(6),
+                      child: FittedBox(
+                        child: Text('\$${transactions[index].amount}'),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    transactions[index].title,
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
+                  subtitle: Text(
+                    DateFormat.yMMMd().format(transactions[index].date),
                   ),
                 );
               },
