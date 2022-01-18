@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import './widgets/chart.dart';
 import './widgets/transactional_list.dart';
 import './widgets/new_transaction.dart';
-// import './widgets/transactional_list.dart';
 import 'models/transaction.dart';
 
 void main() => runApp(MyApp());
@@ -32,6 +31,9 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'OpenSans',
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
+                  ),
+                  button: TextStyle(
+                    color: Colors.white,
                   ),
                 ),
           )),
@@ -76,11 +78,11 @@ class _HomepageState extends State<Homepage> {
     }).toList();
   }
 
-  void _addNewTransaction(String txTitle, double txAmount) {
+  void _addNewTransaction(String txTitle, double txAmount, DateTime chosenDate) {
     final newTx = Transaction(
       title: txTitle,
       amount: txAmount,
-      date: DateTime.now(),
+      date: chosenDate,
       id: DateTime.now().toString(),
     );
 
