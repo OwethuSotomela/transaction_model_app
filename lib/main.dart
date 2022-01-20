@@ -137,7 +137,7 @@ class _HomepageState extends State<Homepage> {
               height: (MediaQuery.of(context).size.height -
                       appBar.preferredSize.height -
                       MediaQuery.of(context).padding.top) *
-                  0.4,
+                  0.3,
               child: Chart(_recentTransactions),
             ),
             Container(
